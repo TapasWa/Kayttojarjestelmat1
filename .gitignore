@@ -1,0 +1,21 @@
+# Build artifacts
+reverse
+reverse.exe
+*.o
+
+# Generated outputs and screenshots
+*.png
+*.pdf
+output_*.txt
+expected.txt
+run_tests_log.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor/OS
+.vscode/
+Thumbs.db
+.DS_Store
+*.bak

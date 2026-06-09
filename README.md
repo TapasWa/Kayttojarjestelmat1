@@ -1,46 +1,57 @@
 
-# reverse — simple line-reversing utility
+- reverse — simple line-reversing utility
 
 Overview
 --------
 
-`reverse` reads lines from stdin or a specified input file and prints
-them in reverse order to stdout or a specified output file.
+`reverse` reads lines from stdin or a specified input file and prints them
+in reverse order to stdout or a specified output file.
 
 Build
 -----
 
+Run `make` (or compile with `gcc`) to build the `reverse` executable:
+
         make
 
-Run / Usage
------------
+Usage
+-----
 
         ./reverse
         ./reverse input.txt
         ./reverse input.txt output.txt
 
-Examples and tests
-------------------
-
-- Sample input file: `sample_input.txt` (included)
-- Run tests using the provided PowerShell script `run_tests.ps1` on Windows:
-
-        powershell -ExecutionPolicy Bypass -File run_tests.ps1
-
 Behavior and Error Handling
 ---------------------------
 
 - If input and output filenames are the same: prints exactly
-    "Input and output file must differ" to stderr and exits with code 1.
+    "Input and output file must differ" to `stderr` and exits with code 1.
 - If an input or output file cannot be opened: prints exactly
-    `error: cannot open file 'name'` to stderr and exits with code 1.
-- If `malloc` fails at any point: prints exactly `malloc failed` to stderr
+    `error: cannot open file 'name'` to `stderr` and exits with code 1.
+- If `malloc` fails: prints `malloc failed` to `stderr` and exits with code 1.
+- If too many arguments are passed: prints `usage: reverse` to `stderr`
     and exits with code 1.
-- If too many arguments are passed: prints exactly `usage: reverse` to
-    stderr and exits with code 1.
-- All error messages are written to `stderr`.
 
-Assumptions, Limitations, and Grading Notes
+Notes
+-----
+
+- Lines of arbitrary length are supported via `getline` or a provided
+    portable fallback for Windows.
+- The implementation buffers all lines in memory before printing in
+    reverse order. For extremely large files this may exhaust RAM.
+
+Repository
+----------
+
+https://github.com/TapasWa/Kayttojarjestelmat1
+
+Files to include in the repository
+---------------------------------
+
+- `reverse.c` — source
+- `Makefile` — build
+- `README.md` — this file
+- `run_tests.ps1` — optional test script (Windows)
 -------------------------------------------
 
 - Lines of arbitrary length are supported using `getline` or the

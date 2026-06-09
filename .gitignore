@@ -1,16 +1,25 @@
-# Build artifacts
+
+# Ignore everything by default, then whitelist project source files
+/*
+!.gitignore
+!README.md
+!reverse.c
+!Makefile
+!run_tests.ps1
+!sample_input.txt
+!sample_expected.txt
+!submission_summary.md
+
+# Ignore common generated files
+*.png
+*.pdf
 reverse
 reverse.exe
 *.o
-
-# Generated outputs and screenshots
-*.png
-*.pdf
 output_*.txt
 expected.txt
-run_tests_log.txt
 
-# Python
+# Python cache
 __pycache__/
 *.pyc
 
@@ -18,4 +27,4 @@ __pycache__/
 .vscode/
 Thumbs.db
 .DS_Store
-*.bak
+

@@ -85,7 +85,7 @@ int main(int argc, char *argv[]) {
     char *in_name = NULL, *out_name = NULL;
 
     if (argc > 3) {
-        fprintf(stderr, "usage: reverse\n");
+        fprintf(stderr, "usage: reverse  \n");
         exit(1);
     }
 

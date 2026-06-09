@@ -29,10 +29,7 @@ Behavior and Error Handling
 - If an input or output file cannot be opened: prints exactly
     `error: cannot open file 'name'` to `stderr` and exits with code 1.
 - If `malloc` fails: prints `malloc failed` to `stderr` and exits with code 1.
- - If too many arguments are passed: prints the exact string
-
-        usage: reverse  
-
+- If too many arguments are passed: prints `usage: reverse <input> <output>`
     to `stderr` and exits with code 1.
 
 Notes

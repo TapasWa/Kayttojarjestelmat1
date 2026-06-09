@@ -7,4 +7,4 @@ reverse: reverse.c
 	$(CC) $(CFLAGS) reverse.c -o reverse
 
 clean:
-	rm -f reverse
+	-del /Q reverse reverse.exe >NUL 2>NUL
